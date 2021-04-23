@@ -29,7 +29,7 @@ const Navigation = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   const logout = () => {
-      const apiUrl = new URL(API_URL.href + '/account/logout');
+      const apiUrl = new URL(API_URL + 'account/logout');
     fetch(apiUrl, {
         method: 'POST',
         mode: 'cors',
@@ -43,7 +43,7 @@ const Navigation = (props) => {
         'logoutId': authInfo,
     })}).then(() => {
       logoutAuth();
-        history.push(new URL(API_URL.href + '/account/login').href);
+        history.push(new URL(API_URL + 'account/login').href);
       history.go(0);
     }).catch(error => console.error(error)); 
   }

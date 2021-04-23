@@ -2,7 +2,7 @@ import SecureStorage from 'secure-web-storage';
 import CryptoJS from 'crypto-js';
 
 function AuthService() {
-    const SECRET_KEY = process.env.REACT_APP_ENCRYPTION_SECRET_KEY;
+    const SECRET_KEY = "key"; //process.env.REACT_APP_ENCRYPTION_SECRET_KEY;
     var secureStorage = new SecureStorage(sessionStorage, {
         hash: function hash(key) {
             return key;

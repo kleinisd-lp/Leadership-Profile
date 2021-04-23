@@ -53,7 +53,7 @@ function UseDirectory() {
     useEffect(() => {
         if (!searchableUrl.current.search) return;
         let unmounted = false;
-        const apiUrl = new URL(API_URL.href + `/profile${history.location.search}`);
+        const apiUrl = new URL(API_URL + `profile${history.location.search}`);
         fetch(apiUrl, API_CONFIG('GET')).then(response => response.json()
         ).then((response) => {
             if (response.isError) {
